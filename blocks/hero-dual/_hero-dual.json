@@ -21,7 +21,7 @@
       "id": "hero-dual",
       "fields": [
         {
-          "component": "reference",
+          "component": "richtext",
           "valueType": "string",
           "name": "image",
           "label": "Image",
