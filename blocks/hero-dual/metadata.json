@@ -1,0 +1,37 @@
+{
+  "variantName": "hero-dual",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-18T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.texasmutual.com/",
+    "originPage": "Texas Mutual homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + paragraph (dual panel: safe / strong)",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage full-width hero with photographic background",
+      "brand intro banners with overlaid heading and supporting text"
+    ],
+    "notSuitableFor": [
+      "text-only heroes without background imagery",
+      "hero sections requiring prominent CTA buttons"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-18T00:00:00.000Z"
+  }
+}

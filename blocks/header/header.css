@@ -1,60 +1,63 @@
-/* header and nav layout */
+/* header and nav layout — Texas Mutual */
 header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
-  position: fixed;
+  position: relative;
 }
 
 header nav {
   box-sizing: border-box;
   display: grid;
   grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
+    'hamburger brand tools' auto / auto 1fr auto;
   align-items: center;
-  gap: 0 24px;
+  gap: 0 16px;
   margin: auto;
-  max-width: 1248px;
-  height: var(--nav-height);
-  padding: 0 24px;
+  max-width: var(--content-max-width);
+  padding: 12px 24px;
   font-family: var(--body-font-family);
-}
-
-header nav[aria-expanded='true'] {
-  grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
-  overflow-y: auto;
-  min-height: 100dvh;
-}
-
-@media (width >= 900px) {
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
-  }
-
-  header nav[aria-expanded='true'] {
-    min-height: 0;
-    overflow: visible;
-  }
 }
 
 header nav p {
   margin: 0;
-  line-height: 1;
+  line-height: 1.2;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 header nav a:any-link {
-  color: currentcolor;
+  color: var(--link-color);
+  text-decoration: none;
 }
 
-/* hamburger */
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* brand / logo */
+header .nav-brand {
+  grid-area: brand;
+}
+
+header .nav-brand img {
+  width: 224px;
+  height: auto;
+  max-width: 100%;
+}
+
+/* just-for top row + main nav bottom row are stacked on the right */
+header .nav-just-for,
+header .nav-bottom {
+  display: none;
+  visibility: hidden;
+}
+
+/* hamburger (mobile only) */
 header nav .nav-hamburger {
   grid-area: hamburger;
   height: 22px;
@@ -69,10 +72,11 @@ header nav .nav-hamburger button {
   border-radius: 0;
   padding: 0;
   background-color: var(--background-color);
-  color: inherit;
+  color: var(--text-color);
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
+  cursor: pointer;
 }
 
 header nav .nav-hamburger-icon,
@@ -128,195 +132,134 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
+/* mobile expanded menu: stack the link groups below the logo */
+header nav[aria-expanded='true'] {
+  grid-template:
+    'hamburger brand' auto
+    'just-for just-for' auto
+    'bottom bottom' auto / auto 1fr;
+}
+
+header nav[aria-expanded='true'] .nav-just-for,
+header nav[aria-expanded='true'] .nav-bottom {
+  display: block;
+  visibility: visible;
+}
+
+header nav[aria-expanded='true'] .nav-just-for {
+  grid-area: just-for;
+  padding-top: 16px;
+}
+
+header nav[aria-expanded='true'] .nav-bottom {
+  grid-area: bottom;
+  padding-bottom: 8px;
+}
+
+header nav[aria-expanded='true'] .nav-just-for ul,
+header nav[aria-expanded='true'] .nav-main ul,
+header nav[aria-expanded='true'] .nav-tools ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+header nav[aria-expanded='true'] .nav-just-for p {
+  color: rgb(63 63 63);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+header nav[aria-expanded='true'] .nav-just-for a,
+header nav[aria-expanded='true'] .nav-bottom a {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* desktop: two stacked rows on the right, logo spans both */
 @media (width >= 900px) {
+  header nav,
+  header nav[aria-expanded='true'] {
+    display: grid;
+    grid-template:
+      'brand just-for' auto
+      'brand bottom' auto / auto 1fr;
+    align-items: center;
+    column-gap: 32px;
+    max-width: var(--content-max-width);
+    min-height: 0;
+    overflow: visible;
+  }
+
   header nav .nav-hamburger {
     display: none;
     visibility: hidden;
   }
-}
 
-/* brand */
-header .nav-brand {
-  grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
-}
+  header .nav-brand {
+    grid-area: brand;
+    align-self: center;
+  }
 
-header nav .nav-brand img {
-  width: 128px;
-  height: auto;
-}
-
-/* sections */
-header nav .nav-sections {
-  grid-area: sections;
-  flex: 1 1 auto;
-  display: none;
-  visibility: hidden;
-}
-
-header nav[aria-expanded='true'] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: start;
-}
-
-header nav .nav-sections ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: var(--body-font-size-s);
-}
-
-header nav .nav-sections ul > li {
-  font-weight: 500;
-}
-
-header nav .nav-sections ul > li > ul {
-  margin-top: 0;
-}
-
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
-}
-
-@media (width >= 900px) {
-  header nav .nav-sections {
-    display: block;
+  /* top "Just for:" row */
+  header .nav-just-for {
+    grid-area: just-for;
+    display: flex;
     visibility: visible;
-    white-space: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    padding-bottom: 14px;
   }
 
-  header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
+  header .nav-just-for p {
+    color: rgb(63 63 63);
+    font-size: 16px;
+    font-weight: 400;
   }
 
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
-    cursor: pointer;
-  }
-
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 2px;
-    transform: rotate(315deg);
-  }
-
-  header nav .nav-sections ul {
+  header .nav-just-for ul {
     display: flex;
     gap: 24px;
-    margin: 0;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
+  header .nav-just-for a {
+    font-size: 16px;
+    font-weight: 600;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
-    display: none;
-    position: relative;
+  /* bottom row: main nav left, tools right, separated by a top border */
+  header .nav-bottom {
+    grid-area: bottom;
+    display: flex;
+    visibility: visible;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    border-top: 1px solid rgb(208 212 217);
+    padding-top: 18px;
+    min-height: 59px;
+    box-sizing: border-box;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
-    position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
-    z-index: 1;
+  header .nav-main ul {
+    display: flex;
+    gap: 40px;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+  header .nav-main a {
+    font-size: 18px;
+    font-weight: 600;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
+  header .nav-tools ul {
+    display: flex;
+    gap: 32px;
   }
-}
 
-/* tools */
-header nav .nav-tools {
-  grid-area: tools;
-}
-
-header nav .nav-tools .button {
-  margin: 0;
-  border: none;
-  padding: 0.5em;
-  background: none;
-  line-height: 0;
-}
-
-/* breadcrumbs */
-header .breadcrumbs {
-  display: none;
-  margin: auto;
-  max-width: 1248px;
-  height: var(--breadcrumbs-height);
-  padding: 0 24px;
-  font-size: var(--body-font-size-xs);
-  overflow: hidden;
-}
-
-header .breadcrumbs ol {
-  display: flex;
-  flex-flow: wrap;
-  list-style: none;
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  gap: 1ch;
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
-header .breadcrumbs ol li {
-  padding: 0;
-  color: var(--dark-color);
-}
-
-header .breadcrumbs ol li:not(:last-child)::after {
-  content: '/';
-  padding-left: 1ch;
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
-header .breadcrumbs ol li[aria-current] {
-  color: var(--text-color);
-}
-
-@media (width >= 900px) {
-  header .breadcrumbs {
-    display: block;
-    max-width: 1264px;
-    padding: 0 32px;
+  header .nav-tools a {
+    font-size: 18px;
+    font-weight: 600;
   }
 }

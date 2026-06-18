@@ -1,0 +1,15 @@
+{
+  "type": "xwalk",
+  "sites": {
+    "texasmutual": {
+      "previewOrg": "suladil",
+      "previewSite": "texasmutual",
+      "contentHostUrl": "author-p95853-e878565.adobeaemcloud.com",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
+      "aemSitePath": "/content/texasmutual",
+      "aemAssetsFolderPath": "/content/dam/texasmutual",
+      "aemSiteName": "texasmutual",
+      "aemSiteTitle": "texasmutual"
+    }
+  }
+}

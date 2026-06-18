@@ -1,0 +1,98 @@
+/* Hero Dual — two-panel hero ("Texas Safe." / "Texas Strong.")
+   Values extracted from texasmutual.com computed styles. */
+
+/* Block spans full viewport width (override EDS section max-width). */
+.hero-dual-container .hero-dual-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-dual {
+  color: #fff;
+}
+
+.hero-bg {
+  background-color: rgb(0 55 103);
+  color: #fff;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.hero-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 15px;
+  min-height: 300px;
+  text-align: center;
+  color: #fff;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/* Mobile: each panel has its own photographic background. */
+.hero-col.texas-safe {
+  background-image: url("https://www.texasmutual.com/assets/images/img/bg-small-hero-safe.jpg");
+}
+
+.hero-col.texas-strong {
+  background-image: url("https://www.texasmutual.com/assets/images/img/bg-small-hero-strong.jpg");
+}
+
+.hero-dual h1 {
+  margin: 0 0 8px;
+  font-family: var(--heading-font-family);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 57.6px;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-dual p {
+  margin: 0 0 16px;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-dual p:last-child {
+  margin-bottom: 0;
+}
+
+/* Desktop: single composite background image, columns side-by-side. */
+@media (width >= 900px) {
+  .hero-bg {
+    background-image: url("https://www.texasmutual.com/assets/images/img/bg-hero.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    padding: 35px 0 0;
+  }
+
+  .hero-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 80px 0;
+    min-height: 300px;
+  }
+
+  .hero-col {
+    flex: 0 0 41.6667%;
+    max-width: 41.6667%;
+    min-height: 0;
+    padding: 0 15px;
+    background-image: none;
+  }
+}

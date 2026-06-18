@@ -1,20 +1,225 @@
+/* Texas Mutual footer — colors from source:
+   top bar #e5eff7, brand blue #0063b8, footer navy #003767, white text. */
+
+/* stylelint-disable no-descending-specificity */
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-m);
 }
 
 footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  margin: 0;
+  padding: 0;
+  max-width: none;
 }
 
-footer .footer p {
+footer p {
   margin: 0;
 }
 
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Top bar --- */
+footer .footer-top-bar {
+  background-color: #e5eff7;
+}
+
+footer .footer-top-bar ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+
+footer .footer-top-bar a {
+  color: var(--link-color);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+footer .footer-top-bar a:hover {
+  text-decoration: underline;
+}
+
+/* --- Main navy section (links + bottom) --- */
+footer .footer-links,
+footer .footer-bottom {
+  background-color: #003767;
+  color: #fff;
+}
+
+footer .footer-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px 40px;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 40px 24px 24px;
+}
+
+footer .footer-brand {
+  text-align: center;
+}
+
+footer .footer-brand img {
+  width: 180px;
+  height: auto;
+}
+
+footer .footer-links h4 {
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+footer .footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+footer .footer-links a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+footer .footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* --- Bottom section --- */
+footer .footer-bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 32px 24px 40px;
+  border-top: 1px solid rgb(255 255 255 / 25%);
+}
+
+footer .footer-bottom h4 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+footer .footer-bottom h4 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .footer-bottom p {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+footer .footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+footer .footer-bottom .footer-subscribe p {
+  font-weight: 600;
+}
+
+/* newsletter form */
+footer .footer-newsletter {
+  display: flex;
+  margin-bottom: 16px;
+  max-width: 420px;
+}
+
+footer .footer-newsletter input {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+footer .footer-newsletter button {
+  flex: 0 0 auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 12px 24px;
+  background-color: var(--link-color);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+footer .footer-newsletter button:hover {
+  background-color: var(--link-hover-color);
+}
+
+/* social icons */
+footer .footer-subscribe ul {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+footer .footer-subscribe ul a {
+  display: inline-flex;
+}
+
+footer .footer-subscribe ul img {
+  width: 36px;
+  height: 36px;
+}
+
+/* --- Desktop layout --- */
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer-top-bar ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+    padding: 18px 32px;
+  }
+
+  footer .footer-links {
+    grid-template-columns: auto repeat(3, 1fr);
+    gap: 0 48px;
+    padding: 48px 32px 24px;
+    align-items: start;
+  }
+
+  footer .footer-brand {
+    text-align: left;
+  }
+
+  footer .footer-brand img {
+    width: 170px;
+  }
+
+  footer .footer-bottom {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px;
+    padding: 32px 32px 48px;
   }
 }

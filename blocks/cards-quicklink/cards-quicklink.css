@@ -1,0 +1,111 @@
+/*
+ * Block: cards-quicklink — icon-over-label quick links.
+ * Values extracted from source section.quick-links computed styles.
+ */
+
+.cards-quicklink > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cards-quicklink > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 32px 16px 0;
+  border: none;
+  background: none;
+}
+
+/* icon cell */
+.cards-quicklink .cards-quicklink-card-image {
+  line-height: 0;
+  text-align: center;
+}
+
+.cards-quicklink .cards-quicklink-card-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-quicklink .cards-quicklink-card-image img {
+  width: auto;
+  height: 32px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* label cell */
+.cards-quicklink .cards-quicklink-card-body {
+  margin: 0;
+  text-align: center;
+}
+
+.cards-quicklink .cards-quicklink-card-body p {
+  margin: 16px 0 0;
+}
+
+/* reset EDS button auto-decoration back to a plain centered text link */
+.cards-quicklink .cards-quicklink-card-body .button-container {
+  display: block;
+  margin: 16px 0 0;
+}
+
+.cards-quicklink .cards-quicklink-card-body a.button:any-link {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  background: none;
+  color: var(--link-color);
+}
+
+.cards-quicklink .cards-quicklink-card-body a.button:hover,
+.cards-quicklink .cards-quicklink-card-body a.button:focus {
+  background: none;
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+@media (width >= 700px) {
+  .cards-quicklink > ul > li {
+    width: 33.333%;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-quicklink > ul {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .cards-quicklink > ul > li {
+    flex: 1 1 0;
+    width: auto;
+    padding: 32px 8px 0;
+  }
+
+  .cards-quicklink .cards-quicklink-card-image img {
+    width: auto;
+    height: 32px;
+  }
+
+  /* match source single-line labels */
+  .cards-quicklink .cards-quicklink-card-body a.button:any-link {
+    white-space: nowrap;
+  }
+}
