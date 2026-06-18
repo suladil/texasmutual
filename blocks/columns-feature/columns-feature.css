@@ -1,0 +1,110 @@
+/* columns-feature — two-column feature row (image + text), alternating order.
+   Values extracted from source computed styles at https://www.texasmutual.com/
+   Section padding 8px 0; row flex space-around; cols flex 0 0 41.6667%; cols top-aligned. */
+
+/* Section spacing (source section padding: 8px 0) */
+.columns-feature {
+  padding: 8px 0;
+  color: var(--text-color);
+}
+
+/* --- Mobile-first: single column, image stacked above text --- */
+.columns-feature > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.columns-feature > div > div {
+  margin: 0;
+}
+
+/* Image cell renders first on mobile regardless of authored order */
+.columns-feature > div > .columns-feature-img-col {
+  order: 0;
+}
+
+.columns-feature > div > div:not(.columns-feature-img-col) {
+  order: 1;
+}
+
+.columns-feature img {
+  display: block;
+  width: 100%;
+}
+
+/* Headings (source H2: 28px / 600 / 33.6px / #222425) */
+.columns-feature h2 {
+  margin: 0 0 8px;
+  font-size: var(--heading-font-size-xl);
+  font-weight: 600;
+  line-height: 33.6px;
+  color: var(--heading-color);
+}
+
+/* Paragraphs (source: 16px / 24px / rgb(63,63,63)) */
+.columns-feature p {
+  margin: 0 0 16px;
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+  color: rgb(63 63 63);
+}
+
+.columns-feature p:last-child {
+  margin-bottom: 0;
+}
+
+/* Feature links: brand blue, bold, no underline.
+   The global button reset already styles a.button this way; this covers
+   plain <a> links and reinforces weight/decoration. */
+.columns-feature a:any-link {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+.columns-feature a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
+/* EDS wraps standalone <p><a> links in <p class="button-container"> and the
+   global reset sets them to display:inline, which collapses each feature link
+   onto one line. The source renders each link on its own line, so restore
+   block flow with bottom spacing. */
+main .columns-feature .button-container {
+  display: block;
+  margin: 0 0 16px;
+}
+
+main .columns-feature .button-container:last-child {
+  margin-bottom: 0;
+}
+
+/* Keep inline links that share a paragraph (e.g. "Learn more | Aprenda más")
+   on the same line. */
+main .columns-feature .button-container .button + .button {
+  margin-left: 0;
+}
+
+/* --- Desktop: two columns side by side, top-aligned (matches source) --- */
+@media (width >= 900px) {
+  .columns-feature > div {
+    flex-flow: row wrap;
+    align-items: start;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  .columns-feature > div > div {
+    flex: 0 0 41.6667%;
+    padding: 0 15px;
+  }
+
+  /* On desktop, honor authored DOM order (matches mobile-rule specificity so
+     the image-first ordering used on mobile is fully reset). */
+  .columns-feature > div > .columns-feature-img-col,
+  .columns-feature > div > div:not(.columns-feature-img-col) {
+    order: 0;
+  }
+}

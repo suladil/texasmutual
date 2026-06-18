@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.texasmutual.com/",
+  "path": "index",
+  "timestamp": "2026-06-18T16:29:10.678Z",
+  "title": "Workers' Compensation Insurance | Texas Mutual",
+  "template": "homepage",
+  "blocks": [
+    "hero-dual",
+    "hero-dual",
+    "cards-quicklink",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature"
+  ]
+}

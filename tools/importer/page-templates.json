@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.texasmutual.com/"
+      ],
+      "representativeUrl": "https://www.texasmutual.com/",
+      "coverageGaps": [],
+      "description": "Texas Mutual homepage with hero, quick links, community funding callout, and alternating two-column feature sections",
+      "blocks": [
+        {
+          "name": "hero-dual",
+          "instances": [
+            "#HOME",
+            "section.hero-section"
+          ]
+        },
+        {
+          "name": "cards-quicklink",
+          "instances": [
+            "section.quick-links"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            "section[class~=\"2-column-section\"]"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc2",
+          "name": "Hero",
+          "selector": [
+            "#HOME",
+            "section.hero-section"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-dual"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc3",
+          "name": "Quick Links",
+          "selector": "section.quick-links",
+          "style": null,
+          "blocks": [
+            "cards-quicklink"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc5",
+          "name": "Community Funding",
+          "selector": "section.full-width-section.py-3.py-md-3",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "section.full-width-section.py-3.py-md-3 h2",
+            "section.full-width-section.py-3.py-md-3 p"
+          ]
+        },
+        {
+          "id": "rc7",
+          "name": "Feature - Why Texas Mutual",
+          "selector": "section.2-column-section.py-3.py-md-2:nth-of-type(3)",
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc9",
+          "name": "Feature - Good for Texas",
+          "selector": "section.2-column-section.py-3.py-md-2:nth-of-type(4)",
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc11",
+          "name": "Feature - Texans Get It",
+          "selector": "section.2-column-section.py-3.py-md-2:nth-of-type(5)",
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}
