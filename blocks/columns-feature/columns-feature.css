@@ -87,6 +87,17 @@ main .columns-feature .button-container .button + .button {
   margin-left: 0;
 }
 
+/* Robustness for xwalk/JCR rendering: when AEM emits the links as plain
+   anchors (not EDS .button-container), a link that is the only element in
+   its paragraph should still stack on its own line. Links that share a
+   paragraph (the "Learn more | Aprenda más" pair) are NOT :only-child, so
+   they correctly stay inline. */
+main .columns-feature .columns-feature-text p > a:only-child,
+main .columns-feature > div > div:not(.columns-feature-img-col) p > a:only-child {
+  display: block;
+  margin: 0 0 16px;
+}
+
 /* --- Desktop: two columns side by side, top-aligned (matches source) --- */
 @media (width >= 900px) {
   .columns-feature > div {
