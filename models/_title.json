@@ -91,6 +91,50 @@
             {
               "name": "Color: White",
               "value": "text-white"
+            },
+            {
+              "name": "Color: Success Green",
+              "value": "text-success"
+            },
+            {
+              "name": "Color: Alert Red",
+              "value": "text-alert"
+            },
+            {
+              "name": "Color: Gold Accent",
+              "value": "text-gold"
+            },
+            {
+              "name": "Align: Left",
+              "value": "text-left"
+            },
+            {
+              "name": "Align: Center",
+              "value": "text-center"
+            },
+            {
+              "name": "Align: Right",
+              "value": "text-right"
+            },
+            {
+              "name": "Emphasis: Uppercase",
+              "value": "text-uppercase"
+            },
+            {
+              "name": "Emphasis: Bold",
+              "value": "text-bold"
+            },
+            {
+              "name": "Size: Extra Large",
+              "value": "text-xl"
+            },
+            {
+              "name": "Size: Large",
+              "value": "text-large"
+            },
+            {
+              "name": "Size: Small",
+              "value": "text-small"
             }
           ]
         }

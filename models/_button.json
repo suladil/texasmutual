@@ -54,6 +54,18 @@
             {
               "name": "outline",
               "value": "outline"
+            },
+            {
+              "name": "navy",
+              "value": "navy"
+            },
+            {
+              "name": "white",
+              "value": "white"
+            },
+            {
+              "name": "pill",
+              "value": "pill"
             }
           ]
         }

@@ -413,6 +413,68 @@ main a.button.outline:focus {
   text-decoration: none;
 }
 
+/* Navy button */
+main a.button.navy:any-link {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 0.6em 1.4em;
+  border: 2px solid #003767;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #003767;
+  color: #fff;
+}
+
+main a.button.navy:hover,
+main a.button.navy:focus {
+  background-color: #00284d;
+  border-color: #00284d;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* White button (for use on dark/navy sections) */
+main a.button.white:any-link {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 0.6em 1.4em;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #fff;
+  color: var(--link-color);
+}
+
+main a.button.white:hover,
+main a.button.white:focus {
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Pill button — fully rounded; combine with another variant for color */
+main a.button.pill:any-link {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 0.6em 1.6em;
+  border: 2px solid var(--link-color);
+  border-radius: 2em;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: var(--link-color);
+  color: #fff;
+}
+
+main a.button.pill:hover,
+main a.button.pill:focus {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+  color: #fff;
+  text-decoration: none;
+}
+
 /* --- Typography / utility styles --- */
 main .eyebrow {
   display: block;
@@ -482,7 +544,24 @@ main .text-white {
   color: #fff;
 }
 
+main .text-success {
+  color: #1a7f37;
+}
+
+main .text-alert {
+  color: #c0392b;
+}
+
+main .text-gold {
+  color: #b8860b;
+}
+
 /* --- Expanded text utility classes --- */
+main .text-xl {
+  font-size: 28px;
+  line-height: 1.3;
+}
+
 main .text-large {
   font-size: 20px;
 }
@@ -498,6 +577,10 @@ main .text-uppercase {
 
 main .text-bold {
   font-weight: 700;
+}
+
+main .text-left {
+  text-align: left;
 }
 
 main .text-right {
