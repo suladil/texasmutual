@@ -586,3 +586,10 @@ main .text-left {
 main .text-right {
   text-align: right;
 }
+
+/* Lead paragraph treatment for text blocks */
+main .text-lead {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+}

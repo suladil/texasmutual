@@ -102,14 +102,19 @@ function decorateTextStyles(main) {
     el.removeAttribute('classes');
   });
 
-  // Move recognised style classes onto the actual heading so the base
-  // h1-h6 rules don't override them (classes often land on a wrapper).
+  // For a heading wrapper, the base h1-h6 rules outweigh a class on the
+  // wrapper, so move the style classes onto the inner heading. For a text
+  // block (paragraphs, no heading) the class already applies to the
+  // wrapper, so leave it in place.
   main.querySelectorAll('[class*="title-"], [class*="text-"]').forEach((el) => {
     const styleClasses = [...el.classList].filter((c) => STYLE_CLASS.test(c));
     if (styleClasses.length === 0) return;
     if (/^H[1-6]$/.test(el.tagName)) return;
+    // Only relocate when the element wraps heading(s) and has no text of
+    // its own; otherwise the class belongs on this (text) element.
     const headings = el.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    if (headings.length === 0) return;
+    const hasOwnParagraph = el.querySelector(':scope > p');
+    if (headings.length === 0 || hasOwnParagraph) return;
     headings.forEach((h) => h.classList.add(...styleClasses));
     styleClasses.forEach((c) => el.classList.remove(c));
   });
