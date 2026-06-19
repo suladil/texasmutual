@@ -259,15 +259,17 @@ main img {
   width: 100%;
 }
 
-/* 2026 Community Funding — centered narrow text column (matches source) */
-main .default-content-wrapper:has(#community-funding) {
+/* 2026 Community Funding — centered narrow text column (matches source).
+   Match by id suffix so it works for both EDS ("community-funding") and
+   AEM/xwalk ("2026-community-funding") heading-id slugs. */
+main .default-content-wrapper:has([id$="community-funding"]) {
   max-width: var(--content-narrow-max-width);
   margin-inline: auto;
   padding: 24px 0;
   text-align: center;
 }
 
-main .default-content-wrapper:has(#community-funding) p {
+main .default-content-wrapper:has([id$="community-funding"]) p {
   margin: 0 auto 1em;
 }
 
