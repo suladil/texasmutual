@@ -54,6 +54,45 @@
               "value": "h6"
             }
           ]
+        },
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Text Style",
+          "options": [
+            {
+              "name": "Eyebrow (small uppercase)",
+              "value": "title-eyebrow"
+            },
+            {
+              "name": "Lead (large intro)",
+              "value": "title-lead"
+            },
+            {
+              "name": "Large Display",
+              "value": "title-display"
+            },
+            {
+              "name": "Centered",
+              "value": "title-centered"
+            },
+            {
+              "name": "Color: Brand Blue",
+              "value": "text-brand-blue"
+            },
+            {
+              "name": "Color: Navy",
+              "value": "text-navy"
+            },
+            {
+              "name": "Color: Muted Grey",
+              "value": "text-muted"
+            },
+            {
+              "name": "Color: White",
+              "value": "text-white"
+            }
+          ]
         }
       ]
     }

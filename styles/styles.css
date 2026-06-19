@@ -439,3 +439,67 @@ main hr {
   border: 0;
   border-top: 1px solid #d0d4d9;
 }
+
+/* --- Title style variants (author-selectable via Title "Text Style") --- */
+main .title-eyebrow {
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--link-color);
+}
+
+main .title-lead {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+main .title-display {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+main .title-centered {
+  text-align: center;
+}
+
+/* --- Text color utilities --- */
+main .text-brand-blue {
+  color: var(--link-color);
+}
+
+main .text-navy {
+  color: #003767;
+}
+
+main .text-muted {
+  color: #5f6b76;
+}
+
+main .text-white {
+  color: #fff;
+}
+
+/* --- Expanded text utility classes --- */
+main .text-large {
+  font-size: 20px;
+}
+
+main .text-small {
+  font-size: var(--body-font-size-xs);
+}
+
+main .text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+main .text-bold {
+  font-weight: 700;
+}
+
+main .text-right {
+  text-align: right;
+}
