@@ -114,6 +114,10 @@
           {
             "name": "secondary",
             "value": "secondary"
+          },
+          {
+            "name": "outline",
+            "value": "outline"
           }
         ]
       }
@@ -136,6 +140,26 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Light Grey Background",
+            "value": "light-grey"
+          },
+          {
+            "name": "Navy Background",
+            "value": "navy"
+          },
+          {
+            "name": "Brand Blue Background",
+            "value": "brand-blue"
+          },
+          {
+            "name": "Centered Content",
+            "value": "centered"
+          },
+          {
+            "name": "Narrow Content",
+            "value": "narrow"
           }
         ]
       }

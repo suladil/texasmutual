@@ -301,3 +301,141 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* ===========================================================================
+   Demo styles — author-selectable variants (section styles, buttons, utilities)
+   =========================================================================== */
+
+/* --- Section background variants --- */
+main .section.light-grey {
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 40px 0;
+}
+
+main .section.navy {
+  background-color: #003767;
+  color: #fff;
+  margin: 0;
+  padding: 48px 0;
+}
+
+main .section.brand-blue {
+  background-color: var(--link-color);
+  color: #fff;
+  margin: 0;
+  padding: 48px 0;
+}
+
+/* Keep headings/links readable on dark section backgrounds */
+main .section.navy :is(h1, h2, h3, h4, h5, h6),
+main .section.brand-blue :is(h1, h2, h3, h4, h5, h6) {
+  color: #fff;
+}
+
+main .section.navy a:any-link,
+main .section.brand-blue a:any-link {
+  color: #fff;
+}
+
+/* --- Section layout variants --- */
+main .section.centered {
+  text-align: center;
+}
+
+main .section.centered .button-container {
+  justify-content: center;
+}
+
+main .section.narrow > div {
+  max-width: var(--content-narrow-max-width);
+}
+
+/* --- Button variants ---
+   The global reset turns a.button into a plain inline link, so these
+   variants override it with higher specificity to render real buttons. */
+main a.button.primary:any-link {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 0.6em 1.4em;
+  border: 2px solid var(--link-color);
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: var(--link-color);
+  color: #fff;
+}
+
+main a.button.primary:hover,
+main a.button.primary:focus {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+main a.button.secondary:any-link {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 0.6em 1.4em;
+  border: 2px solid var(--link-color);
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #fff;
+  color: var(--link-color);
+}
+
+main a.button.secondary:hover,
+main a.button.secondary:focus {
+  background-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+main a.button.outline:any-link {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 0.6em 1.4em;
+  border: 2px solid currentcolor;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  background: none;
+  color: var(--link-color);
+}
+
+main a.button.outline:hover,
+main a.button.outline:focus {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --- Typography / utility styles --- */
+main .eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--link-color);
+}
+
+main .lead {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+main .text-center {
+  text-align: center;
+}
+
+main hr {
+  margin: 32px 0;
+  border: 0;
+  border-top: 1px solid #d0d4d9;
+}
