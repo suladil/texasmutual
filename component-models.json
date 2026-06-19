@@ -27,7 +27,7 @@
     "id": "image",
     "fields": [
       {
-        "component": "richtext",
+        "component": "reference",
         "name": "image",
         "label": "Image",
         "multi": false
@@ -227,7 +227,7 @@
     "id": "card-quicklink",
     "fields": [
       {
-        "component": "richtext",
+        "component": "reference",
         "valueType": "string",
         "name": "image",
         "label": "Image",
@@ -380,7 +380,7 @@
     "id": "hero-dual",
     "fields": [
       {
-        "component": "richtext",
+        "component": "reference",
         "valueType": "string",
         "name": "image",
         "label": "Image",

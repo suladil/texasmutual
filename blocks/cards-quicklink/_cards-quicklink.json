@@ -36,7 +36,7 @@
       "id": "card-quicklink",
       "fields": [
         {
-          "component": "richtext",
+          "component": "reference",
           "valueType": "string",
           "name": "image",
           "label": "Image",
