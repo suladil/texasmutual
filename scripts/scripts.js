@@ -83,6 +83,29 @@ function buildAutoBlocks() {
   }
 }
 
+/**
+ * Promote author-selected text-style classes onto the actual heading.
+ * The xwalk Title component stores its "Text Style" selection as classes,
+ * but AEM may place them on a wrapper around the heading rather than the
+ * heading itself, so the base h1-h6 rules win and the style appears to do
+ * nothing. This moves recognised style classes onto the inner heading.
+ * @param {Element} main The main element
+ */
+function decorateTextStyles(main) {
+  const STYLE_CLASS = /^(title-|text-)/;
+  main.querySelectorAll('[class*="title-"], [class*="text-"]').forEach((el) => {
+    const styleClasses = [...el.classList].filter((c) => STYLE_CLASS.test(c));
+    if (styleClasses.length === 0) return;
+    // If the element is itself a heading, the classes already apply.
+    if (/^H[1-6]$/.test(el.tagName)) return;
+    // Otherwise move the style classes onto the heading(s) it wraps.
+    const headings = el.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    if (headings.length === 0) return;
+    headings.forEach((h) => h.classList.add(...styleClasses));
+    styleClasses.forEach((c) => el.classList.remove(c));
+  });
+}
+
 function a11yLinks(main) {
   const links = main.querySelectorAll('a');
   links.forEach((link) => {
@@ -107,6 +130,8 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  // promote author-selected text-style classes onto headings
+  decorateTextStyles(main);
   // add aria-label to links
   a11yLinks(main);
 }
