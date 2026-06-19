@@ -93,12 +93,21 @@ function buildAutoBlocks() {
  */
 function decorateTextStyles(main) {
   const STYLE_CLASS = /^(title-|text-)/;
+
+  // AEM/xwalk may emit the Title "Text Style" selection as a literal
+  // `classes` attribute rather than a real `class`. Promote those first.
+  main.querySelectorAll('[classes]').forEach((el) => {
+    const raw = el.getAttribute('classes') || '';
+    raw.split(/[\s,]+/).filter(Boolean).forEach((c) => el.classList.add(c));
+    el.removeAttribute('classes');
+  });
+
+  // Move recognised style classes onto the actual heading so the base
+  // h1-h6 rules don't override them (classes often land on a wrapper).
   main.querySelectorAll('[class*="title-"], [class*="text-"]').forEach((el) => {
     const styleClasses = [...el.classList].filter((c) => STYLE_CLASS.test(c));
     if (styleClasses.length === 0) return;
-    // If the element is itself a heading, the classes already apply.
     if (/^H[1-6]$/.test(el.tagName)) return;
-    // Otherwise move the style classes onto the heading(s) it wraps.
     const headings = el.querySelectorAll('h1, h2, h3, h4, h5, h6');
     if (headings.length === 0) return;
     headings.forEach((h) => h.classList.add(...styleClasses));
