@@ -164,89 +164,6 @@
     ]
   },
   {
-    "id": "text",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      },
-      {
-        "component": "multiselect",
-        "name": "classes",
-        "label": "Text Style",
-        "options": [
-          {
-            "name": "Lead (large intro)",
-            "value": "text-lead"
-          },
-          {
-            "name": "Color: Brand Blue",
-            "value": "text-brand-blue"
-          },
-          {
-            "name": "Color: Navy",
-            "value": "text-navy"
-          },
-          {
-            "name": "Color: Muted Grey",
-            "value": "text-muted"
-          },
-          {
-            "name": "Color: White",
-            "value": "text-white"
-          },
-          {
-            "name": "Color: Success Green",
-            "value": "text-success"
-          },
-          {
-            "name": "Color: Alert Red",
-            "value": "text-alert"
-          },
-          {
-            "name": "Color: Gold Accent",
-            "value": "text-gold"
-          },
-          {
-            "name": "Align: Left",
-            "value": "text-left"
-          },
-          {
-            "name": "Align: Center",
-            "value": "text-center"
-          },
-          {
-            "name": "Align: Right",
-            "value": "text-right"
-          },
-          {
-            "name": "Emphasis: Uppercase",
-            "value": "text-uppercase"
-          },
-          {
-            "name": "Emphasis: Bold",
-            "value": "text-bold"
-          },
-          {
-            "name": "Size: Extra Large",
-            "value": "text-xl"
-          },
-          {
-            "name": "Size: Large",
-            "value": "text-large"
-          },
-          {
-            "name": "Size: Small",
-            "value": "text-small"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "button",
     "fields": [
       {
@@ -338,6 +255,30 @@
           {
             "name": "Narrow Content",
             "value": "narrow"
+          },
+          {
+            "name": "Text: Large",
+            "value": "section-text-large"
+          },
+          {
+            "name": "Text: Small",
+            "value": "section-text-small"
+          },
+          {
+            "name": "Text: Uppercase Headings",
+            "value": "section-text-uppercase"
+          },
+          {
+            "name": "Text Color: Brand Blue",
+            "value": "section-text-brand-blue"
+          },
+          {
+            "name": "Text Color: Navy",
+            "value": "section-text-navy"
+          },
+          {
+            "name": "Text Color: Muted Grey",
+            "value": "section-text-muted"
           }
         ]
       }

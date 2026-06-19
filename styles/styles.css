@@ -351,6 +351,33 @@ main .section.narrow > div {
   max-width: var(--content-narrow-max-width);
 }
 
+/* --- Section-level text treatments (apply to all text in the section) --- */
+main .section.section-text-large p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+main .section.section-text-small p {
+  font-size: var(--body-font-size-xs);
+}
+
+main .section.section-text-uppercase :is(h1, h2, h3, h4, h5, h6) {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+main .section.section-text-brand-blue :is(h1, h2, h3, h4, h5, h6, p) {
+  color: var(--link-color);
+}
+
+main .section.section-text-navy :is(h1, h2, h3, h4, h5, h6, p) {
+  color: #003767;
+}
+
+main .section.section-text-muted :is(h1, h2, h3, h4, h5, h6, p) {
+  color: #5f6b76;
+}
+
 /* --- Button variants ---
    The global reset turns a.button into a plain inline link, so these
    variants override it with higher specificity to render real buttons. */
