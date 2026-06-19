@@ -10,11 +10,14 @@
  * The composite background image is applied via CSS on .hero-bg.
  */
 export default function decorate(block) {
-  // Find the cell that holds the headings/copy (image cell may be empty and in its own row).
-  const cells = [...block.querySelectorAll(':scope > div > div')];
-  const textCell = cells.find((c) => c.querySelector('h1, h2, h3, p'));
-  if (!textCell) return;
-  const nodes = [...textCell.children];
+  // Collect headings/copy wherever they live. EDS nests them in a
+  // ':scope > div > div' cell; AEM/xwalk may nest them differently, so
+  // gather all heading/paragraph nodes in document order to support both.
+  const nodes = [...block.querySelectorAll('h1, h2, h3, h4, h5, h6, p')]
+    // keep headings and text paragraphs; drop image-only paragraphs (the
+    // hero background is applied via CSS, not an inline image)
+    .filter((n) => /^H[1-6]$/.test(n.tagName) || (n.textContent.trim() !== '' && !n.querySelector('img, picture')));
+  if (nodes.length === 0) return;
 
   // Split into panels by heading boundaries.
   const panels = [];
