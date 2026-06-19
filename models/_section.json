@@ -53,6 +53,30 @@
             {
               "name": "Narrow Content",
               "value": "narrow"
+            },
+            {
+              "name": "Text: Large",
+              "value": "section-text-large"
+            },
+            {
+              "name": "Text: Small",
+              "value": "section-text-small"
+            },
+            {
+              "name": "Text: Uppercase Headings",
+              "value": "section-text-uppercase"
+            },
+            {
+              "name": "Text Color: Brand Blue",
+              "value": "section-text-brand-blue"
+            },
+            {
+              "name": "Text Color: Navy",
+              "value": "section-text-navy"
+            },
+            {
+              "name": "Text Color: Muted Grey",
+              "value": "section-text-muted"
             }
           ]
         }
